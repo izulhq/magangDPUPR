@@ -494,7 +494,7 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
 
       labels.push(
         '<i style="background:' + color + '; opacity: '
-        + tryPolygonSetting(p, '_colorOpacity', '0.7') + '"></i> ' +
+        + tryPolygonSetting(p, '_colorOpacity', '0.4') + '"></i> ' +
         from + ((to && isNum) ? '&ndash;' + to : (isNum) ? '+' : ''));
     }
 
@@ -516,7 +516,7 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
         weight: 1,
         opacity: 1,
         color: getColor(value),
-        fillOpacity: tryPolygonSetting(polygon, '_colorOpacity', '0.7'),
+        fillOpacity: tryPolygonSetting(polygon, '_colorOpacity', '0.4'),
         fillColor: 'white'
       }
     } else {
@@ -525,7 +525,7 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
         opacity: 1,
         color: tryPolygonSetting(polygon, '_outlineColor', 'white'),
         dashArray: '3',
-        fillOpacity: tryPolygonSetting(polygon, '_colorOpacity', '0.7'),
+        fillOpacity: tryPolygonSetting(polygon, '_colorOpacity', '0.4'),
         fillColor: getColor(value)
       }
     }
