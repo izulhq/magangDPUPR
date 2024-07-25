@@ -131,10 +131,15 @@ if (point['Image']) {
   popupContent += '<img src="' + point['Image'] + '"><br>';
 }
 for (var prop in point) {
-  if (prop !== "Name" && prop !== "Latitude" && prop !== "Longitude" && prop !== "Group" && prop !== "Image" && point[prop] !== "") {
-    popupContent += "<strong>" + prop + ":</strong> " + point[prop] + "<br>";
-  }
-}
+        // Exclude specific properties from popup
+        if (prop !== "Name" && prop !== "Latitude" && prop !== "Longitude" && 
+            prop !== "Group" && prop !== "Image" && 
+            prop !== "Marker Icon" && prop !== "Marker Color" && 
+            prop !== "Icon Color" && prop !== "Custom Size" && 
+            point[prop] !== "") {
+          popupContent += "<strong>" + prop + ":</strong> " + point[prop] + "<br>";
+        }
+      }
 
 var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
   .bindPopup(popupContent);
