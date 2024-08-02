@@ -775,9 +775,9 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
    */
   function addTitle() {
     var dispTitle = getSetting('_mapTitleDisplay');
-
+// <img src="iconSolo.png" alt=Logo Kota Surakarta" width="40" height="50"> <br /> 
     if (dispTitle !== 'off') {
-      var mapIcon = '<img src="' + (getSetting('_mapIcon') || 'iconSolo.png') + '" alt="Map Icon" />';
+      var mapIcon = '<img src="getSetting('_mapIcon')" + alt="Map Icon" />';
       var title = '<h3 class="pointer">' + getSetting('_mapTitle') + '</h3>';
       var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
 
