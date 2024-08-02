@@ -853,13 +853,13 @@ function pointsToGeoJSON(points) {
       return {
         "type": "Feature",
         "properties": {
-          "name": point.Name,
-          "description": point.Description
+          "name": points.Name,
+          "description": points.Description
           // Tambahkan properti lain yang Anda butuhkan
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [parseFloat(point.Longitude), parseFloat(point.Latitude)]
+          "coordinates": [parseFloat(points.Longitude), parseFloat(points.Latitude)]
         }
       };
     })
