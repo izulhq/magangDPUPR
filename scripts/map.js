@@ -782,10 +782,10 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
       var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
 
       if (dispTitle == 'topleft') {
-        $('div.leaflet-top').prepend('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' mapIcon + title + subtitle + '</div>');
+        $('div.leaflet-top').prepend('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + mapIcon + title + subtitle + '</div>');
       } else if (dispTitle == 'topcenter') {
         $('#map').append('<div class="div-center"></div>');
-        $('.div-center').append('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' mapIcon + title + subtitle + '</div>');
+        $('.div-center').append('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + mapIcon + title + subtitle + '</div>');
       }
 
       $('.map-title h3').click(function() { location.reload(); });
