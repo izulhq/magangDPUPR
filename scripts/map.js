@@ -777,6 +777,7 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
     var dispTitle = getSetting('_mapTitleDisplay');
 
     if (dispTitle !== 'off') {
+      var mapIcon = getSetting('_mapIcon');
       var title = '<h3 class="pointer">' + getSetting('_mapTitle') + '</h3>';
       var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
 
