@@ -7,7 +7,8 @@ var constants = {
   polylinesSheetName: 'Polylines',
   /* OPTIONS */
 	// Map Info
-  _mapTitle: 'Map Title',
+  _mapIcon: 'Map Icon',
+_mapTitle: 'Map Title',
   _mapSubtitle: 'Map Subtitle',
   _mapTitleDisplay: 'Display Title',
 	_authorName: 'Author Name',
