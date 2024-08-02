@@ -621,6 +621,21 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
     document.title = getSetting('_mapTitle');
     addBaseMap();
 
+    // Tambahan Baru
+    var parsedPoints = parse(points);
+    var pointGeoJSON = pointsToGeoJSON(parsedPoints);
+
+    var searchControl = new L.Control.Search({
+      layer: L.geoJson(pointsGeoJSON),
+      propertyName: 'Name',
+      marker: false,
+      moveToLocation: function(latlng, title, map) {
+        map.setView(latlng, 16);
+      }
+    });
+
+    map.addControl(searchControl);
+
     // Add point markers to the map
     var layers;
     var group = '';
@@ -830,6 +845,27 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
             }
           }
 
+// Tambahan Baru 2
+function pointsToGeoJSON(points) {
+  return {
+    "type": "FeatureCollection",
+    "features": points.map(function(point) {
+      return {
+        "type": "Feature",
+        "properties": {
+          "name": point.Name,
+          "description": point.Description
+          // Tambahkan properti lain yang Anda butuhkan
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [parseFloat(point.Longitude), parseFloat(point.Latitude)]
+        }
+      };
+    })
+  };
+}
+          
           var line = L.polyline(latlng, {
             color: (p[index]['Color'] == '') ? 'grey' : p[index]['Color'],
             weight: trySetting('_polylinesWeight', 2),
