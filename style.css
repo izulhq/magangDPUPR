@@ -219,6 +219,16 @@ form {
   vertical-align: middle;
 }
 
+.map-logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.map-logo img {
+  height: auto; /* Ini akan override oleh inline style */
+  max-width: 100%; /* Memastikan logo tidak lebih lebar dari container */
+}
+
 .map-title {
   margin-top: 0 !important;
   margin-bottom: 10px;
