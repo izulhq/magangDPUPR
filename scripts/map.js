@@ -777,21 +777,24 @@ var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
     var dispTitle = getSetting('_mapTitleDisplay');
 // <img src="iconSolo.png" alt=Logo Kota Surakarta" width="40" height="50"> <br /> 
     if (dispTitle !== 'off') {
-      // var mapIcon = '<img src="getSetting('_mapIcon')" + alt="Map Icon" />';
-      var title = '<h3 class="pointer">' + getSetting('_mapTitle') + '</h3>';
-      var subtitle = '<h5>' + getSetting('_mapSubtitle') + '</h5>';
+      var mapIcon = getSetting('_mapIcon');
+      var iconHeight = getSetting('_mapIconHeight');
+      var title = '<h3 class="judul">' + getSetting('_mapTitle') + '</h3>';
+      var subtitle = '<h5 class="subJudul">' + getSetting('_mapSubtitle') + '</h5>';
+
+      var iconHtml = mapIcon ? '<div class="map-logo"><img src="' + mapIcon + '" alt="Logo" style="height: ' + iconHeight + 'px;"></div>' : '';
 
       if (dispTitle == 'topleft') {
-        $('div.leaflet-top').prepend('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + title + subtitle + '</div>');
+        $('div.leaflet-top').prepend('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + iconHtml + title + subtitle + '</div>');
       } else if (dispTitle == 'topcenter') {
         $('#map').append('<div class="div-center"></div>');
-        $('.div-center').append('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + title + subtitle + '</div>');
+        $('.div-center').append('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + iconHtml + title + subtitle + '</div>');
       }
 
       $('.map-title h3').click(function() { location.reload(); });
+      $('.map-logo').click(function() { location.reload(); });
     }
   }
-
 
   /**
    * Adds polylines to the map
