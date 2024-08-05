@@ -126,7 +126,7 @@ $(window).on('load', function() {
         );
 
       if (point.Latitude !== '' && point.Longitude !== '') {
-        var popupContent = "<b>" + point['Name'] + '</b><br>';
+        var popupContent = '<h4 class="pointsTitle">' + point['Name'] + '</h4><br>';
 if (point['Image']) {
   popupContent += '<img src="' + point['Image'] + '"><br>';
 }
