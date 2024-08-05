@@ -37,6 +37,24 @@ h6 {
   cursor: pointer;
 }
 
+.judul {
+  cursor: pointer;
+  font-size: 150%;
+  text-align: center;
+}
+
+.pointsTitle {
+  font-style: bold;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.subJudul {
+  cursor: pointer;
+  font-size: 100%;
+  text-align: center;
+}
+
 .leaflet-control-custom {
   padding: 6px 8px;
   background: white;
